@@ -19,8 +19,17 @@ public class StudentList {
 
 	public static void writeFile(){
 		try{
+			readFile();
 			BufferedWriter fileOut = new BufferedWriter(new FileWriter("students.txt", false));
-			fileOut.write(line+", "+newStudentName);
+			fileOut.write(line+", "+newStudentName+'\n');
+
+			Date date = new Date();
+			String dateFormat = "dd/mm/yyyy-hh:mm:ss a";
+			DateFormat dateFormatTemp = new SimpleDateFormat(dateFormat);
+			String dateline= dateFormatTemp.format(date);
+
+			fileOut.write(dateline);
+			fileOut.close();
 		}
 		catch (Exception e){
 			e.printStackTrace();
@@ -58,11 +67,8 @@ public class StudentList {
 			else if(args[0].contains("+")){
 				System.out.println("Loading data ...");
 
-					String t = args[0].substring(1);
-					Date d = new Date();
-					String df = "dd/mm/yyyy-hh:mm:ss a";
-					DateFormat dateFormat = new SimpleDateFormat(df);
-					String fd= dateFormat.format(d);
+					newStudentName = args[0].substring(1);
+					writeFile();
 
 				System.out.println("Data Loaded.");
 			}
