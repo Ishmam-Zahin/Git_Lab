@@ -78,7 +78,7 @@ public class StudentList {
 					String studentName = args[0].substring(1);
 					for(String name: names){
 						if(name.equals(studentName)){
-							System.out.println("We found it!\n");
+							System.out.println("We found it!");
 							break;
 						}
 					}
