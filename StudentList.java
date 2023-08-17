@@ -28,7 +28,7 @@ public class StudentList {
 			DateFormat dateFormatTemp = new SimpleDateFormat(dateFormat);
 			String dateline= dateFormatTemp.format(date);
 
-			fileOut.write(dateline);
+			fileOut.write("List last updated on "+dateline);
 			fileOut.close();
 		}
 		catch (Exception e){
