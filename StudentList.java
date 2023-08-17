@@ -88,24 +88,13 @@ public class StudentList {
 			else if(args[0].contains("c"))
 			{
 				System.out.println("Loading data ...");
-				try {
-					BufferedReader s = new BufferedReader(
-							new InputStreamReader(
-									new FileInputStream("students.txt")));
-					String D = s.readLine();
-					char a[] = D.toCharArray();
-					boolean in_word = false;
-					int count=0;
-					for(char c:a) {
-						if(c ==' ')
-						{
-							if (!in_word) {	count++; in_word =true;	}
-							else { in_word=false;}
-						}
-					}
-					System.out.println(count +" word(s) found " + a.length);
-				} catch (Exception e){}
+
+				System.out.println(names.length+" word(s) found\n");
+
 				System.out.println("Data Loaded.");
+			}
+			else{
+				System.out.println("Constant invalid!");
 			}
 		}
 	}
