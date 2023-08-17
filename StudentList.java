@@ -6,6 +6,7 @@ public class StudentList {
 
 //		Check arguments
 		if(args.length!=1){
+			//terminate
 			System.out.println("Invalid Arguments!");
 			return;
 		}
