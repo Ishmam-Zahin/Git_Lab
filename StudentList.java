@@ -89,7 +89,7 @@ public class StudentList {
 			{
 				System.out.println("Loading data ...");
 
-				System.out.println(names.length+" word(s) found\n");
+				System.out.println(names.length+" word(s) found");
 
 				System.out.println("Data Loaded.");
 			}
