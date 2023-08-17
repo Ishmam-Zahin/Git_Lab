@@ -19,7 +19,6 @@ public class StudentList {
 
 	public static void writeFile(){
 		try{
-			readFile();
 			BufferedWriter fileOut = new BufferedWriter(new FileWriter("students.txt", false));
 			fileOut.write(line+", "+newStudentName+'\n');
 
@@ -75,21 +74,15 @@ public class StudentList {
 			else if(args[0].contains("?"))
 			{
 				System.out.println("Loading data ...");
-				try {
-					BufferedReader s = new BufferedReader(
-							new InputStreamReader(
-									new FileInputStream("students.txt")));
-					String r = s.readLine();
-					String i[] = r.split(",");
-					boolean done = false;
-					String t = args[0].substring(1);
-					for(int idx = 0; idx<i.length && !done; idx++) {
-						if(i[idx].equals(t)) {
-							System.out.println("We found it!");
-							done=true;
+
+					String studentName = args[0].substring(1);
+					for(String name: names){
+						if(name.equals(studentName)){
+							System.out.println("We found it!\n");
+							break;
 						}
 					}
-				} catch (Exception e){}
+
 				System.out.println("Data Loaded.");
 			}
 			else if(args[0].contains("c"))
