@@ -50,7 +50,7 @@ public class StudentList {
 				System.out.println("Loading data ...");
 
 					Random random = new Random();
-					int randomNum = random.nextInt();
+					int randomNum = random.nextInt(names.length);
 					System.out.println(names[randomNum]);
 
 				System.out.println("Data Loaded.");
